@@ -1,0 +1,37 @@
+elements a notifier:
+
+-user : broadcast
+	new
+	edit: 
+		what??
+
+-post : 
+	create, admin
+	edit, admin,
+	allow, broadcast
+	refused, admin, proprio
+	edit, admin and proprio
+
+categorie & tags :
+	create: admin, proprio
+	delete : broadcast
+	edit : broadcasts
+
+message : 
+	
+comment : 
+	edit a comment : admin, proprio
+
+
+messages: 
+	-general chat
+	-users to admin
+	-admin to users
+	-broadcast messages( untouchable, read only)
+
+
+
+
+	-NewsLetter
+
+pujibotifa@uscaves.com   	a
