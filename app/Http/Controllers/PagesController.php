@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Mail;
 use App\Post;
+use App\Category;
+use App\Tag;
+use App\User;
 use Session;
 
 class PagesController extends Controller{
@@ -14,11 +17,6 @@ class PagesController extends Controller{
         $posts = Post::orderBy('created_at', 'desc')->limit(10)->get();
         return view("visitorspages.welcome")->withPosts($posts);
     }   
-
-    public function getAdminIndex(){
-        $posts = Post::orderBy('created_at', 'desc')->limit(10)->get();
-        return view("dashboard.pages.index")->withPosts($posts);
-    }
 
     public function getAdminTest(){
         return view("dashboard.test");

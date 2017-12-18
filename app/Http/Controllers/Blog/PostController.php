@@ -96,6 +96,14 @@ class PostController extends Controller
         return view('dashboard.blog.posts.show')->withPost($post);
     }
 
+    public function preview($slug)
+    {
+        $post = Post::where('slug', '=', $slug)->first();
+        $propositions = Post::where('id', '<>' , $post->id)->where('category_id', '=' , $post->category->id)->orderBy('updated_at', 'desc')->take(3)->get();
+        $sameauthorposts = Post::where('user_id', '=' , $post->user->id)->where('id', '<>' , $post->id)->orderBy('updated_at', 'desc')->take(5)->get();
+        return view('dashboard.blog.posts.preview')->withPost($post)->withPropositions($propositions)->withSameauthorposts($sameauthorposts);
+    }
+
     public function edit($id)
     {
         $post = Post::where([['id', '=', $id],['user_id', '=', Sentinel::getUser()->id]])->first();

@@ -55,11 +55,6 @@ class MessagesController extends Controller
         return redirect()->route('messages.index')->withMessages($message);
     }
 
-    public function important($id){
-        echo 'bonjour';
-    }
-
-
     /**
      * Remove the specified resource from storage.
      *

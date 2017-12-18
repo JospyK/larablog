@@ -1,13 +1,13 @@
 @extends("main")
 
-@section("pagetitle", " Homepage")
+@section("pagetitle", " Welcome")
 
 @section("stylesheets")
 
 @endsection
 
 @section('bgimg', 'background-image: url("/img/home-bg.jpg")')
-@section('subheading','A Clean Bootstrap Blog')
+@section('subheading','We luv it here')
 
 @section("content")
   <!-- Main Content -->

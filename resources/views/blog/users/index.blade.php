@@ -24,14 +24,14 @@
               <!--Card content-->
               <div class="card-block">
                   <!--Title-->
-                  <h3 class="card-title title-one"><a href="{{route('blog.users', $user->id)}}"><strong>{{$user->last_name}} {{$user->first_name}}</strong></a></h3>
+                  <h3 class="card-title title-one"><a href="{{route('blog.users', $user->first_name.'.'.$user->last_name)}}"><strong>{{$user->last_name}} {{$user->first_name}}</strong></a></h3>
                   <p class="card-meta">Joined in {{date('m, Y', strtotime($user->created_at))}}</p>
                   <p class="card-meta"><a href="mailto:{{$user->email}}" style="text-decoration: none;"><i class="fa fa-envelope"></i> {{$user->email}}</a></p>
 
                   <!--Text-->
                   <p class="card-text">{{$user->description}}</p>
                   <hr>
-                  <a class="card-meta" href="{{route('blog.users', $user->id)}}"><span><i class="fa fa-file"></i> {{$user->posts->where('statut', '=','success')->count()}} {{ ($user->posts->count()<=1)? " Post": " Posts"}} </span></a>
+                  <a class="card-meta" href="{{route('blog.users', $user->first_name.'.'.$user->last_name)}}"><span><i class="fa fa-file"></i> {{$user->posts->where('statut', '=','success')->count()}} {{ ($user->posts->count()<=1)? " Post": " Posts"}} </span></a>
               </div>
               <!--/.Card content-->
 

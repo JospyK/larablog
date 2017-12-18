@@ -16,7 +16,9 @@
     <div class="row">
       <div class="col-md-8 fit"  style="margin-bottom: 20px;">
         <img src="{{'/img/post_image/'.htmlspecialchars($post->image)}}" class="img-responsive">
-        <h1 class="fit">{{ $post -> title }}</h1>
+        <h1 class="fit">{{ $post -> title }}
+        <a href="{{route('posts.preview', $post->slug)}}" class="btn btn-info pull-right">See Real Preview</a>
+        </h1>
         <h3 class="fit">{{ $post -> description }}</h3>
         <p class="fit">{!! $post -> body !!}</p>
         <hr>
@@ -74,7 +76,7 @@
                 </span>
               </div>
 
-              @if(Sentinel::getUser()->roles()->first()->slug == 'admin')
+              @if(Sentinel::getUser()->roles()->first()->slug == 'admin' && $post->user->id != Sentinel::getUser()->id)
                 <div class="col-xs-5">
                   <button class="btn btn-info btn-block" data-toggle="modal" data-target="#statutmenu"><span class="glyphicon glyphicon-pencil"> </span> Change</button>
                 </div>

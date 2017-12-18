@@ -2,7 +2,7 @@
 
 @section("pagetitle", " Contact")
 
-@section('bgimg', 'background-image: url("/img/contact-bg.jpg")')
+@section('bgimg', 'background-image: url("/img/contact-bg1.jpg")')
 @section('subheading','Have questions? We have answers (maybe).')
 
 @section('content')

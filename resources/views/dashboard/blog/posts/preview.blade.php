@@ -30,6 +30,13 @@
 <!-- Post Content -->
 <article>
   <div class="container">
+      <div class="row">
+        <div class="col-sm-10 col-sm-offset-1 alert alert-warning text-center" role="alert" data-dismmiss="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times</button>
+          <p><b>Attention: </b> This is just a preview of the post. It doesn't means that it is alraedy validate. We are just showing you what it will look like. Thanks you!</p>
+        </div>
+      </div>
+
     <div class="row">
       <div class="col-md-8">
         <h1 class="fit">{{ $post -> title }}</h1>
@@ -45,7 +52,8 @@
         consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
         cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
         proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
-        <hr>
+        <a href="{{route('posts.show', $post->id)}}" class="btn btn-info btn-sm pull-right">Return to dashboard</a>
+
         <div class="tags"><span class="glyphicon glyphicon-tags"> </span> Tags : 
           @foreach($post->tags as $tag)
             <span class="label label-default"><a href="{{route('blog.tag', $tag->name)}}" style="color: inherit;">{{$tag -> name}}</a></span>

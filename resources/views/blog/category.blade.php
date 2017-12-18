@@ -25,7 +25,7 @@
               <!--Section heading-->
               <h1 class="section-heading"><i class="fa fa-folder"></i> {{$category->name}}</h1>
               <!--Section sescription-->
-              <p class="section-description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <p class="section-description"></p>
               <br>
 
               @foreach ($posts as $post)
@@ -50,7 +50,7 @@
                       <a href="" class="blue-text"><h5><i class="fa fa-heart"></i> {{ $post -> category -> name }}</h5></a>
                       <h3><a href="{{ url('blog/'.$post->slug)}}"><strong>{{ $post -> title }}</strong></a></h3>
                       <p>{{ $post -> description }}</p>
-                      <p>by <a href="{{route('blog.users', $post->user->id)}}" class="author"><strong>{{ $post->user->last_name}} {{ $post->user->first_name}}</strong></a> on {{ date('M d, Y', strtotime($post -> created_at)) }}</p>
+                      <p>by <a href="{{route('blog.users', $post->user->first_name.'.'.$post->user->last_name)}}" class="author"><strong>{{ $post->user->last_name}} {{ $post->user->first_name}}</strong></a> on {{ date('M d, Y', strtotime($post -> created_at)) }}</p>
                       <a href="{{ url('blog/'.$post->slug) }}" class="btn btn-default pull-right"> Read more <i class="glyphicon glyphicon-eye-open"></i></a>
                   </div>
                   <!--/Second column-->
@@ -110,7 +110,7 @@
               <div class="row card" style="padding: 10px; margin: 20px 0px ;">
                 <h2><i class="fa fa-envelope"></i> <span class="text-center">Subscribe To Our Newsletter</span></h2>
                 <div class="col-xs-12">
-                  <form name="sentMessage" id="contactForm" method="post" action="{{route('subscribers.store')}}">
+                  <form name="sentMessage" id="contactForm" method="post" action="#">
                     <div class="row control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls">
                             <label>Name</label>

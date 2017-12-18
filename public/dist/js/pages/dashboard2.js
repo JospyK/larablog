@@ -50,13 +50,13 @@ var eddition = $("li a.text-light-blue span.pull-right").text();
     //Number - The percentage of the chart that we cut out of the middle
     percentageInnerCutout: 40, // This is 0 for Pie charts
     //Number - Amount of animation steps
-    animationSteps: 300,
+    animationSteps: 200,
     //String - Animation easing effect
     animationEasing: "easeOutBounce",
     //Boolean - Whether we animate the rotation of the Doughnut
     animateRotate: true,
     //Boolean - Whether we animate scaling the Doughnut from the centre
-    animateScale: false,
+    animateScale: true,
     //Boolean - whether to make the chart responsive to window resizing
     responsive: true,
     // Boolean - whether to maintain the starting aspect ratio or not when responsive, if set to false, will take up entire container

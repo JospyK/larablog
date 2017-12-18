@@ -45,7 +45,7 @@
                       <a href="{{route('blog.category', $post -> category -> name)}}" class="blue-text"><h5><i class="fa fa-folder"></i> {{ $post -> category -> name }}</h5></a>
                       <h3><a href="{{ url('blog/'.$post->slug) }}"><strong>{{ $post -> title }}</strong></a></h3>
                       <p>{{ $post -> description }}</p>
-                      <p>by <a href="{{route('blog.users', $post->user->id)}}" class="author"><strong>{{ $post->user->last_name}} {{ $post->user->first_name}}</strong></a> on {{ date('M d, Y', strtotime($post -> created_at)) }}</p>
+                      <p>by <a href="{{route('blog.users', $post->user->first_name.'.'.$post->user->last_name)}}" class="author"><strong>{{ $post->user->last_name}} {{ $post->user->first_name}}</strong></a> on {{ date('M d, Y', strtotime($post -> created_at)) }}</p>
                       <a href="{{ url('blog/'.$post->slug) }}" class="btn btn-default pull-right"> Read more <i class="glyphicon glyphicon-eye-open"></i></a>
                   </div>
                   <!--/Second column-->

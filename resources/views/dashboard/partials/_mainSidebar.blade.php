@@ -70,12 +70,6 @@
         
         <li class="{{ Request::is('dashboard/users') ? 'active' : ''}}"><a href="{{ route('users.index') }}"><i class="fa fa-users"></i> <span>Users</span></a></li>
 
-        <li class="{{ Request::is('dashboard/newsletter') ? 'active' : ''}}"><a href="{{ route('newsletter.index') }}"><i class="fa fa-envelope"></i> <span>Newsletter</span></a></li>
-
-        <li class="{{ Request::is('dashboard/subscribers') ? 'active' : ''}}"><a href="{{ route('subscribers.index') }}"><i class="fa fa-envelope"></i> <span>Subscribers</span></a></li>
-<!--    <li class="{{ Request::is('dashboard/categories') ? 'active' : ''}}"><a href="{{ route('notification') }}"><i class="fa fa-bell-o"></i> <span>Notifications</span></a></li>-->        
-        <li class="{{ Request::is('dashboard/timeline') ? 'active' : ''}}"><a href="{{ route('timeline') }}"><i class="fa fa-clock-o"></i> <span>Timeline</span></a></li>
-
         <li class="{{ Request::is('dashboard/messages') ? 'active' : ''}}">
           <a href="{{route('messages.index')}}">
             <i class="fa fa-comments"></i> <span>Messages</span>

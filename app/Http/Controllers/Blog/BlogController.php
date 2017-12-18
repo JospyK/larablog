@@ -50,8 +50,9 @@ class BlogController extends Controller
 		return view('blog.single')->withPost($post)->withPropositions($propositions)->withSameauthorposts($sameauthorposts);
 	}
 
-    public function getUserPosts($id){
-		$user = User::where('id', '=' , $id)->first();
+    public function getUserPosts($name){
+        list($fname, $lname) = explode(".", $name);
+        $user = User::where([['first_name', $fname], ['last_name', $lname]])->first();
 		$posts = Post::where('user_id', '=' , $user->id)->where('statut', '=', 'success')->orderBy('updated_at', 'desc')->paginate(10);
     
     	$categories = Post::where('user_id', '=' , $user->id)->where('statut', '=', 'success')

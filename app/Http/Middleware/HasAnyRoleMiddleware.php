@@ -19,8 +19,9 @@ class HasAnyRoleMiddleware
     {
         //1. should be authenticated
         //2. should be an admin or manager
-        if (Sentinel::check()){   
-          if(Sentinel::getUser()->roles()->first()->slug == 'admin' || Sentinel::getUser()->roles()->first()->slug =='manager')
+        if (Sentinel::check()){  
+          #//if(Sentinel::getUser()->roles()->first()->slug == 'admin' || Sentinel::getUser()->roles()->first()->slug =='manager')
+          if(in_array(Sentinel::getUser()->roles()->first()->slug, ['admin', 'manager']))
             return $next($request);
           else
             return redirect("/");

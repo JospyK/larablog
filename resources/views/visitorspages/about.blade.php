@@ -2,8 +2,8 @@
 
 @section("pagetitle", " About Us")
 
-@section('bgimg', 'background-image: url("/img/home-bg.jpg")')
-@section('subheading','This is what we do.')
+@section('bgimg', 'background-image: url("/img/about-bg1.jpg")')
+@section('subheading','Passion Led Us Here...')
 
 @section('content')
 
